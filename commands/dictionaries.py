@@ -8,6 +8,7 @@ commands = {
     "delete_car": DeleteCar(),
     "show_all_cars": ShowAllCars(),
     "show_all_drivers": ShowAllDrivers(),
+    "show_driver_by_id": ShowDriverById(),
 }
 command_descriptions = {
     "exit": "Закрыть приложение",
@@ -16,5 +17,6 @@ command_descriptions = {
     "add_car": "Добавить новый автомобиль",
     "delete_car": "Удалить автомобиль",
     "show_all_cars": "Вывести список всех автомобилей",
-    "show_all_drivers": "Вывести список всех водителей"
+    "show_all_drivers": "Вывести список всех водителей",
+    "show_driver_by_id": "Вывести водителя через его Id",
 }

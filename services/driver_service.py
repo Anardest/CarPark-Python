@@ -43,5 +43,10 @@ class DriverService:
         else:
             print("Нет доступных водителей")
 
-    def find_driver(self):
-        driver = self.db.fetchall('SELECT * FROM drivers')
+    def show_driver_by_id(self):
+        driver = self.db.fetchone('SELECT * FROM drivers')
+        if driver:
+            print("Водитель найден")
+            print(driver)
+        else:
+            print("Водитель с таким Id не найден")

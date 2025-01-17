@@ -23,3 +23,7 @@ class DeleteDriver(CommandFactory):
 class ShowAllDrivers(CommandFactory):
     def execute(self):
         self.driver_service.show_all_drivers()
+
+class ShowDriverById(CommandFactory):
+    def execute(self):
+        self.driver_service.show_driver_by_id()
