@@ -2,7 +2,6 @@ from database.database import Database
 from utils.validate_int import validate_integer
 
 
-# TODO: отобразить всех, поиск по Id
 class DriverService:
     def __init__(self, db : Database):
         self.db = db
