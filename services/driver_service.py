@@ -44,7 +44,11 @@ class DriverService:
             print("Нет доступных водителей")
 
     def show_driver_by_id(self):
-        driver = self.db.fetchone('SELECT * FROM drivers')
+        driver_id = input("Введите Id водителя: ")
+
+        validate_integer(driver_id, "Id водителя")
+
+        driver = self.db.fetchone('SELECT * FROM drivers WHERE id = ?', (driver_id))
         if driver:
             print("Водитель найден")
             print(driver)
