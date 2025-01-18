@@ -45,7 +45,10 @@ CarPark/
 |   └───database.py # Управление базой данных (подключение, создание таблиц)
 ├───services
 │   ├───car_service.py # Логика работы с автомобилями
-|   └───driver_service.py # Логика работы с водителями
+|   ├───driver_service.py # Логика работы с водителями
+|   └───trip_service.py #Логика работы с поездками
 └───utils
     ├───validate_int.py # Проверка на валидность
-    └───pagination.py # Поддержка пагинации страниц 'help'
+    ├───pagination.py # Поддержка пагинации страниц 'help'
+    ├───record_exists.py # Существует ли запись в БД
+    └───validate_date.py # Проверка на валидность даты
