@@ -39,7 +39,7 @@ class DriverService:
         drivers = self.db.fetchall('SELECT * FROM drivers')
         if drivers:
             for driver in drivers:
-                print(driver)
+                print(f"Id: {driver[0]}, Имя: {driver[1]}, Фамилия: {driver[2]}, Возраст: {driver[3]}, Стаж: {driver[4]}")
         else:
             print("Нет доступных водителей")
 
