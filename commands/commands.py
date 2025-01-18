@@ -27,3 +27,7 @@ class ShowAllDrivers(CommandFactory):
 class ShowDriverById(CommandFactory):
     def execute(self):
         self.driver_service.show_driver_by_id()
+
+class ShowCarById(CommandFactory):
+    def execute(self):
+        self.car_service.show_car_by_id()
