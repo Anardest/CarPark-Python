@@ -16,6 +16,8 @@ def main():
         elif user_input == "exit":
             print("Выход из приложения.")
             break
+        elif user_input in commands:
+            commands[user_input].execute()
         else:
             print("Неизвестная команда. Введите 'help' для списка команд.")
 
