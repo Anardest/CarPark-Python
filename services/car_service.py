@@ -54,3 +54,19 @@ class CarService:
                 print(car)
         else:
             print("Нет доступных автомобилей")
+
+    def show_car_by_id(self):
+        car_id = input("Введите Id автомобиля: ")
+
+        validate_integer(car_id, "Id автомобиля")
+
+        car = self.db.fetchone('SELECT * FROM cars WHERE id = ?',(car_id))
+        if car:
+            print("Автомобиль найден")
+            print(f"Id: {car[0]}")
+            print(f"Марка: {car[1]}")
+            print(f"Модель: {car[2]}")
+            print(f"Год выпуска: {car[3]}")
+            print(f"Пробег: {car[4]}")
+        else:
+            print("Автомобиль с таким Id не найден")
