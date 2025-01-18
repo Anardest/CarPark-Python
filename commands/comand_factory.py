@@ -1,5 +1,6 @@
 from database import *
 from services import *
+
 import abc
 
 
@@ -11,6 +12,7 @@ class CommandFactory:
 
     Для регистрации команд нужно:
         1) Прописать логику и действие команды в отдельном файле
+        (Если работа с новым сервисом, то прописать его в __init__ CommandFactory)
         2) Добавить новый класс - наследник CommandFactory в (желательно) commands.py
         3) В классе наследнике ОБЯЗАТЕЛЬНО реализовать абстрактный метод execute
         4) В execute через self.*название сервиса*.*сам метод* вызвать его
@@ -26,6 +28,7 @@ class CommandFactory:
         self.db = Database()
         self.car_service = CarService(self.db)
         self.driver_service = DriverService(self.db)
+        self.trip_service = TripService(self.db)
     @abc.abstractmethod
     def execute(self):
         pass

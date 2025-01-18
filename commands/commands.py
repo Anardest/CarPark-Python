@@ -31,3 +31,11 @@ class ShowDriverById(CommandFactory):
 class ShowCarById(CommandFactory):
     def execute(self):
         self.car_service.show_car_by_id()
+
+class AddTrip(CommandFactory):
+    def execute(self):
+        self.trip_service.add_trip()
+
+class ShowAllTrips(CommandFactory):
+    def execute(self):
+        self.trip_service.show_all_trips()
