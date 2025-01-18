@@ -9,6 +9,7 @@ commands = {
     "show_all_cars": ShowAllCars(),
     "show_all_drivers": ShowAllDrivers(),
     "show_driver_by_id": ShowDriverById(),
+    "show_car_by_id": ShowCarById(),
 }
 command_descriptions = {
     "exit": "Закрыть приложение",
