@@ -19,4 +19,5 @@ command_descriptions = {
     "show_all_cars": "Вывести список всех автомобилей",
     "show_all_drivers": "Вывести список всех водителей",
     "show_driver_by_id": "Вывести водителя через его Id",
+    "show_car_by_id": "Вывести автомобиль через его Id"
 }
