@@ -47,5 +47,5 @@ CarPark/
 │   ├───car_service.py # Логика работы с автомобилями
 |   └───driver_service.py # Логика работы с водителями
 └───utils
-    └───validate_int.py # Проверка на валидность
-
+    ├───validate_int.py # Проверка на валидность
+    └───pagination.py # Поддержка пагинации страниц 'help'
