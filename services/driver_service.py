@@ -1,5 +1,5 @@
 from database.database import Database
-from utils.validate_int import validate_integer
+from utils.validate_int import validate_array_integer
 
 
 class DriverService:
@@ -12,9 +12,13 @@ class DriverService:
         age = input("Введите возраст: ")
         experience = input("Введите стаж: ")
 
+
         # Валидация
-        validate_integer(age, "Возраст")
-        validate_integer(experience, "Стаж")
+        validate = [age, experience]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
+
 
         self.db.execute('''
         INSERT INTO drivers (name, surname, age, experience)
@@ -26,7 +30,10 @@ class DriverService:
         driver_id = input("Введите Id водителя: ")
 
         # Валидация
-        validate_integer(driver_id, "Id водителя")
+        validate = [driver_id]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
 
         self.db.execute('''
                 DELETE FROM drivers
@@ -45,7 +52,11 @@ class DriverService:
     def show_driver_by_id(self):
         driver_id = input("Введите Id водителя: ")
 
-        validate_integer(driver_id, "Id водителя")
+        # Валидация
+        validate = [driver_id]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
 
         driver = self.db.fetchone('SELECT * FROM drivers WHERE id = ?', (driver_id))
         if driver:

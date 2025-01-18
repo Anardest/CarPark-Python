@@ -1,5 +1,5 @@
 from database.database import Database
-from utils.validate_int import validate_integer
+from utils.validate_int import validate_array_integer
 
 class CarService:
     '''
@@ -20,8 +20,11 @@ class CarService:
         mileage = input("Введите пробег: ")
 
         # Валидация данных
-        validate_integer(year, "Год производства")
-        validate_integer(mileage, "Пробег")
+        # Валидация
+        validate = [year]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
 
         # Вставка данных в БД, с автоматическим сохранением
         self.db.execute('''
@@ -35,10 +38,13 @@ class CarService:
         '''
         Удаляет автомобиль из БД
         '''
-        car_id = input("Введите Id автомобиля")
+        car_id = input("Введите Id автомобиля: ")
 
         # Валидация
-        validate_integer(car_id, "Id автомобиля")
+        validate = [car_id]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
 
         self.db.execute('''
         DELETE FROM cars
@@ -55,10 +61,15 @@ class CarService:
         else:
             print("Нет доступных автомобилей")
 
+    # Вывести авто по его Id
     def show_car_by_id(self):
         car_id = input("Введите Id автомобиля: ")
 
-        validate_integer(car_id, "Id автомобиля")
+        # Валидация
+        validate = [car_id]
+        validate = validate_array_integer(validate)
+        if validate is None:
+            return
 
         car = self.db.fetchone('SELECT * FROM cars WHERE id = ?',(car_id))
         if car:
