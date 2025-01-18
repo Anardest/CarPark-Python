@@ -51,7 +51,7 @@ class CarService:
         cars = self.db.fetchall('SELECT * FROM cars')
         if cars:
             for car in cars:
-                print(car)
+                print(f"Id: {car[0]}, Марка: {car[1]}, Модель: {car[2]}, Год выпуска: {car[3]}, Пробег: {car[4]}")
         else:
             print("Нет доступных автомобилей")
 
