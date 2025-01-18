@@ -51,6 +51,10 @@ class DriverService:
         driver = self.db.fetchone('SELECT * FROM drivers WHERE id = ?', (driver_id))
         if driver:
             print("Водитель найден")
-            print(driver)
+            print(f"Id: {driver[0]}")
+            print(f"Имя: {driver[1]}")
+            print(f"Фамилия: {driver[2]}")
+            print(f"Возраст: {driver[3]}")
+            print(f"Стаж: {driver[4]}")
         else:
             print("Водитель с таким Id не найден")
