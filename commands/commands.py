@@ -39,3 +39,7 @@ class AddTrip(CommandFactory):
 class ShowAllTrips(CommandFactory):
     def execute(self):
         self.trip_service.show_all_trips()
+
+class ShowTripById(CommandFactory):
+    def execute(self):
+        self.trip_service.show_trip_by_id()

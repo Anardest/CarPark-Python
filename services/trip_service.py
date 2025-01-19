@@ -13,7 +13,7 @@ class TripService:
         car_id = input("Введите Id автомобиля: ")
         driver_id = input("Введите Id водителя: ")
         distance = input("Введите длину поездки: ")
-        date = input("Введите дату поездки в формате: yyyy-mm-dd: ")
+        date = input("Введите дату поездки в формате yyyy-mm-dd: ")
 
         # Валидация
         validate = [car_id,driver_id,distance]
@@ -42,8 +42,18 @@ class TripService:
         if trips:
             for trip in trips:
                 print(
-                    f"Id поездки: {trip[0]}, Id авто: {trip[1]}, Id водителя: {trip[2]}, Длина: {trip[3]}, км, Дата: {trip[4]}")
+                    f"Id поездки: {trip[0]}, Id авто: {trip[1]}, Id водителя: {trip[2]}, Длина: {trip[3]} км, Дата: {trip[4]}")
         else:
-            print("Нет доступных поездок")
+            print("Нет доступных поездок.")
 
+    def show_trip_by_id(self):
+        trip_id = input("Введите Id поездки: ")
+        validate = validate_integer(trip_id, "Id поездки")
+        if validate is None:
+            return
+        trip = self.db.fetchone('SELECT * FROM trips WHERE id = ?',(trip_id))
+        if trip:
+            print(f"Id поездки: {trip[0]}, Id авто: {trip[1]}, Id водителя: {trip[2]}, Длина: {trip[3]} км, Дата: {trip[4]}")
+        else:
+            print("Такой поездки не существует.")
 

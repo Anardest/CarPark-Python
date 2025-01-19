@@ -12,6 +12,7 @@ commands = {
     "show_car_by_id": ShowCarById(),
     "add_trip": AddTrip(),
     "show_all_trips": ShowAllTrips(),
+    "show_trip_by_id": ShowTripById(),
 }
 command_descriptions = {
     "exit": "Закрыть приложение",
@@ -24,5 +25,6 @@ command_descriptions = {
     "show_driver_by_id": "Вывести водителя через его Id",
     "show_car_by_id": "Вывести автомобиль через его Id",
     "add_trip": "Добавить новую поездку",
-    "show_all_trips": "Вывести все поездки"
+    "show_all_trips": "Вывести все поездки",
+    "show_trip_by_id": "Вывести поездку через её Id",
 }
